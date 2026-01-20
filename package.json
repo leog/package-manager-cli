@@ -1,18 +1,55 @@
 {
   "name": "package-manager-alias-cli",
-  "version": "1.0.0",
-  "description": "One command to use any* package manager",
+  "version": "1.0.1",
+  "description": "One command to use any* package manager - a universal CLI that auto-detects and uses npm, yarn, pnpm, or bun",
   "main": "pm.js",
   "bin": {
     "pm": "./pm.js"
   },
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "prepublishOnly": "npm run lint && npm run test"
+  },
+  "keywords": [
+    "package-manager",
+    "npm",
+    "yarn",
+    "pnpm",
+    "bun",
+    "cli",
+    "universal",
+    "alias",
+    "pm"
+  ],
   "author": "Leo Giovanetti <hello@leog.me>",
   "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "files": [
+    "pm.js"
+  ],
   "dependencies": {
     "detect-package-manager": "^3.0.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "jest": "^29.7.0",
+    "prettier": "^3.2.5"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/leog/package-manager-cli.git"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/leog/package-manager-cli/issues"
+  },
+  "homepage": "https://github.com/leog/package-manager-cli#readme"
 }
