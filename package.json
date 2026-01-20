@@ -1,6 +1,6 @@
 {
   "name": "package-manager-alias-cli",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "One command to use any* package manager - a universal CLI that auto-detects and uses npm, yarn, pnpm, or bun",
   "main": "pm.js",
   "bin": {
