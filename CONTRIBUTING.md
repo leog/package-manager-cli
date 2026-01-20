@@ -96,13 +96,48 @@ npm run test:coverage
 
 ## Commit Messages
 
-Use clear, descriptive commit messages:
+We use [Conventional Commits](https://www.conventionalcommits.org/) for automatic changelog generation. Use these prefixes:
+
+- `feat:` - New features (appears in changelog)
+- `fix:` - Bug fixes (appears in changelog)
+- `docs:` - Documentation changes (appears in changelog)
+- `perf:` - Performance improvements (appears in changelog)
+- `test:` - Adding/updating tests (hidden from changelog)
+- `chore:` - Maintenance tasks (hidden from changelog)
+- `refactor:` - Code refactoring (hidden from changelog)
+
+Examples:
 
 - `feat: add --verbose flag`
 - `fix: correct error message for missing lockfile`
 - `docs: update README with troubleshooting section`
-- `test: add tests for version flag`
-- `chore: update dependencies`
+
+## Releasing (Maintainers)
+
+We use [standard-version](https://github.com/conventional-changelog/standard-version) for automated versioning and changelog generation.
+
+```bash
+# Preview what will happen
+npm run release:dry-run
+
+# Create a release (auto-determines version bump from commits)
+npm run release
+
+# Force a minor version bump
+npm run release:minor
+
+# Force a major version bump
+npm run release:major
+
+# Push tags and publish
+git push --follow-tags origin main
+npm publish
+```
+
+The release script will:
+1. Bump the version in `package.json` based on commits
+2. Update `CHANGELOG.md` automatically
+3. Create a git commit and tag
 
 ## Questions?
 
